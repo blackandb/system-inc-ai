@@ -13,11 +13,9 @@ const nodes = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] overflow-hidden py-12">
+    <section className="relative min-h-[calc(100vh-80px)] overflow-hidden py-8">
       <PageContainer>
-        <div className="grid min-h-[620px] items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
-
-          {/* LEFT */}
+        <div className="grid min-h-[560px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
 
           <div>
 
@@ -26,14 +24,14 @@ export function Hero() {
               The AI Company Operating System
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.06em] text-white md:text-6xl lg:text-7xl leading-[0.95]">
+            <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.05em] leading-[0.9] text-white md:text-6xl lg:text-[5.2rem]">
               Build an AI Company.
               <span className="block text-zinc-500">
                 Not just a business.
               </span>
             </h1>
 
-            <div className="mt-7 flex items-center gap-5 text-xl font-medium text-white">
+            <div className="mt-6 flex items-center gap-5 text-xl font-medium text-white">
               <span>Build.</span>
               <span className="text-violet-400">•</span>
               <span>Launch.</span>
@@ -41,14 +39,13 @@ export function Hero() {
               <span>Operate.</span>
             </div>
 
-            <p className="mt-7 max-w-xl text-lg leading-8 text-zinc-300">
-              Every company begins with an idea.
-              SYSTEM INC AI transforms that idea into a complete
-              AI-powered company by creating its brand, structure,
-              departments, documents and intelligent workforce.
+            <p className="mt-6 max-w-xl text-base leading-8 text-zinc-300">
+              Every company begins with an idea. SYSTEM INC AI transforms that
+              idea into a complete AI-powered company by creating its brand,
+              structure, departments, documents and intelligent workforce.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
 
               <Link
                 href="/onboarding"
@@ -67,8 +64,6 @@ export function Hero() {
             </div>
 
           </div>
-
-          {/* RIGHT */}
 
           <div className="relative hidden h-[620px] lg:block">
 
@@ -108,6 +103,7 @@ export function Hero() {
                 <p className="mt-1 text-xs text-zinc-400">
                   {node.subtitle}
                 </p>
+
               </div>
             ))}
 
@@ -115,7 +111,7 @@ export function Hero() {
 
         </div>
 
-        <div className="mt-6 grid overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl md:grid-cols-4">
+        <div className="mt-24 grid overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl md:grid-cols-4">
 
           {[
             ["Trusted by founders", "Building the future of business with AI"],
