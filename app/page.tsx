@@ -8,11 +8,8 @@ export default function HomePage() {
   return (
     <Background>
       <Navbar />
-
       <Hero />
-
       <CompanyFactory />
-
     </Background>
   );
 }
