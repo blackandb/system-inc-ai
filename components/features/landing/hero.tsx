@@ -6,11 +6,8 @@ import { PageHeader } from "@/components/layout/page-header";
 export function Hero() {
   return (
     <section className="relative flex min-h-[calc(100vh-80px)] items-center overflow-hidden">
-
       <PageContainer>
-
         <div className="max-w-5xl">
-
           <PageHeader
             eyebrow="SYSTEM INC AI"
             title="Build your company with Artificial Intelligence."
@@ -18,7 +15,6 @@ export function Hero() {
           />
 
           <div className="mt-12 flex flex-wrap gap-4">
-
             <Link
               href="/onboarding"
               className="rounded-full bg-white px-8 py-4 text-sm font-medium text-black transition hover:bg-neutral-200"
@@ -27,16 +23,14 @@ export function Hero() {
             </Link>
 
             <Link
-              href="/platform"
+              href="/onboarding"
               className="rounded-full border border-white/10 px-8 py-4 text-sm text-white transition hover:border-white/30"
             >
               Explore Platform
             </Link>
-
           </div>
 
           <div className="mt-20 grid gap-10 md:grid-cols-3">
-
             <div>
               <p className="text-4xl font-semibold">100+</p>
               <span className="text-sm text-zinc-500">
@@ -57,13 +51,9 @@ export function Hero() {
                 Company Operating System
               </span>
             </div>
-
           </div>
-
         </div>
-
       </PageContainer>
-
     </section>
   );
 }
