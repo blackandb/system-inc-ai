@@ -5,40 +5,28 @@ interface BackgroundProps {
   children?: React.ReactNode;
 }
 
-export function Background({
-  className,
-  children,
-}: BackgroundProps) {
+export function Background({ className, children }: BackgroundProps) {
   return (
     <div
       className={cn(
-        "relative min-h-screen overflow-hidden bg-[#050505] text-white",
+        "relative min-h-screen overflow-hidden bg-[#030303] text-white",
         className
       )}
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[-300px] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-white/5 blur-[180px]" />
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(255,255,255,0.10),transparent_28%),radial-gradient(circle_at_70%_35%,rgba(124,92,255,0.18),transparent_32%),linear-gradient(180deg,#050505_0%,#030303_100%)]" />
 
-      {/* Grid */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.045]"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
         }}
       />
 
-      {/* Noise */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.015] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.08] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] [background-size:28px_28px]" />
 
-      <div className="relative z-10">
-        {children}
-      </div>
+      <div className="relative z-10">{children}</div>
     </div>
   );
 }
