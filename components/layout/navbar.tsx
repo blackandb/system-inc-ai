@@ -1,66 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
 
 const navigation = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Onboarding",
-    href: "/onboarding",
-  },
+  { name: "Platform", href: "#platform" },
+  { name: "Solutions", href: "#solutions" },
+  { name: "Enterprise", href: "#enterprise" },
+  { name: "Resources", href: "#resources" },
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
-
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-8 lg:px-12">
-
-        {/* Logo */}
-
-        <Link
-          href="/"
-          className="flex items-center gap-3"
-        >
-          <span className="text-xl font-semibold tracking-tight text-white">
-            SYSTEM INC AI
-          </span>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-8 lg:px-12">
+        <Link href="/" className="text-xl font-semibold tracking-[0.18em] text-white">
+          SYSTEM INC AI
         </Link>
 
-        {/* Navigation */}
-
-        <nav className="hidden items-center gap-10 lg:flex">
+        <nav className="hidden items-center gap-12 lg:flex">
           {navigation.map((item) => (
-            <Link
+            <a
               key={item.name}
               href={item.href}
-              className={cn(
-                "text-sm text-zinc-400 transition-colors duration-200 hover:text-white",
-                pathname === item.href && "text-white"
-              )}
+              className="text-sm text-zinc-300 transition hover:text-white"
             >
               {item.name}
-            </Link>
+            </a>
           ))}
         </nav>
 
-        {/* CTA */}
-
-        <div className="flex items-center gap-4">
-          <Link
-            href="/onboarding"
-            className="rounded-full border border-white bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-zinc-200"
-          >
-            Start Building
-          </Link>
-        </div>
-
+        <Link
+          href="/onboarding"
+          className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-zinc-200"
+        >
+          Start Building →
+        </Link>
       </div>
     </header>
   );
