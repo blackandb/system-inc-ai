@@ -6,20 +6,12 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   {
-    name: "Platform",
-    href: "#",
+    name: "Home",
+    href: "/",
   },
   {
-    name: "Solutions",
-    href: "#",
-  },
-  {
-    name: "Pricing",
-    href: "#",
-  },
-  {
-    name: "Resources",
-    href: "#",
+    name: "Onboarding",
+    href: "/onboarding",
   },
 ];
 
@@ -61,21 +53,12 @@ export function Navbar() {
         {/* CTA */}
 
         <div className="flex items-center gap-4">
-
-          <Link
-            href="/auth/login"
-            className="text-sm text-zinc-400 transition hover:text-white"
-          >
-            Sign In
-          </Link>
-
           <Link
             href="/onboarding"
             className="rounded-full border border-white bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-zinc-200"
           >
             Start Building
           </Link>
-
         </div>
 
       </div>
