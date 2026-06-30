@@ -43,15 +43,19 @@ const departments = [
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(0);
+
   const [selectedCountry, setSelectedCountry] =
-  useState<Country | null>(null);
+    useState<Country | null>(null);
 
   const progress = useMemo(() => {
     return Math.round(((step + 1) / steps.length) * 100);
   }, [step]);
 
-  const next = () => setStep((current) => Math.min(current + 1, steps.length - 1));
-  const back = () => setStep((current) => Math.max(current - 1, 0));
+  const next = () =>
+    setStep((current) => Math.min(current + 1, steps.length - 1));
+
+  const back = () =>
+    setStep((current) => Math.max(current - 1, 0));
 
   return (
     <main className="min-h-screen bg-[#030305] text-white">
