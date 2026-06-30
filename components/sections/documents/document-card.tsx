@@ -3,20 +3,33 @@ type Props = {
   category: string;
 };
 
-export function DocumentCard({ title, category }: Props) {
+export function DocumentCard({
+  title,
+  category,
+}: Props) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/30 hover:bg-white/[0.05]">
-      <p className="text-xs uppercase tracking-[0.25em] text-violet-400">
-        {category}
-      </p>
+    <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:bg-white/[0.05]">
 
-      <h3 className="mt-4 text-lg font-semibold text-white">
-        {title}
-      </h3>
+      <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-500/10 blur-3xl transition group-hover:bg-violet-500/20" />
 
-      <p className="mt-3 text-sm leading-6 text-zinc-400">
-        Generated instantly by your AI operating system.
-      </p>
+      <div className="relative">
+
+        <div className="mb-8 h-px w-full bg-gradient-to-r from-violet-400/60 via-white/10 to-transparent" />
+
+        <p className="text-xs uppercase tracking-[0.28em] text-violet-400">
+          {category}
+        </p>
+
+        <h3 className="mt-5 text-2xl font-semibold text-white">
+          {title}
+        </h3>
+
+        <p className="mt-5 text-sm leading-7 text-zinc-400">
+          Generated instantly by your AI Operating System.
+        </p>
+
+      </div>
+
     </div>
   );
 }
