@@ -6,11 +6,20 @@ type Props = {
   logo: string;
 };
 
+const invertLogos = [
+  "GitHub",
+  "Slack",
+  "OpenRouter",
+  "Microsoft 365",
+];
+
 export function IntegrationCard({
   name,
   category,
   logo,
 }: Props) {
+  const shouldInvert = invertLogos.includes(name);
+
   return (
     <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(139,92,246,.18)]">
 
@@ -33,9 +42,11 @@ export function IntegrationCard({
             <Image
               src={logo}
               alt={name}
-              width={30}
-              height={30}
-              className="object-contain opacity-90"
+              width={34}
+              height={34}
+              className={`object-contain opacity-95 ${
+                shouldInvert ? "brightness-0 invert" : ""
+              }`}
             />
 
           </div>
