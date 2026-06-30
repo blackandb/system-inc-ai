@@ -1,5 +1,5 @@
 "use client";
-import CountrySelector from "@/components/ui/country-selector";
+import CountrySelector from "@/app/onboarding/CountrySelector";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
