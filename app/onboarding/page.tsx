@@ -1,5 +1,6 @@
 "use client";
 import CountrySelector from "@/app/onboarding/CountrySelector";
+import type { Country } from "@/lib/countries";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
@@ -42,10 +43,8 @@ const departments = [
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(0);
-  const [selectedCountry, setSelectedCountry] = useState<{
-  name: string;
-  code: string;
-} | null>(null);
+  const [selectedCountry, setSelectedCountry] =
+  useState<Country | null>(null);
 
   const progress = useMemo(() => {
     return Math.round(((step + 1) / steps.length) * 100);
