@@ -3,30 +3,40 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 
-type Country = {
-  name: string;
-  code: string;
-};
+import { countries, type Country } from "@/lib/countries";
 
 const featuredCountries: Country[] = [
-  { name: "Romania", code: "RO" },
-  { name: "United Kingdom", code: "GB" },
-  { name: "United States", code: "US" },
-  { name: "Germany", code: "DE" },
-  { name: "United Arab Emirates", code: "AE" },
+  {
+    name: "Romania",
+    code: "RO",
+    currency: "RON",
+    language: "Romanian",
+  },
+  {
+    name: "United Kingdom",
+    code: "GB",
+    currency: "GBP",
+    language: "English",
+  },
+  {
+    name: "United States",
+    code: "US",
+    currency: "USD",
+    language: "English",
+  },
+  {
+    name: "Germany",
+    code: "DE",
+    currency: "EUR",
+    language: "German",
+  },
+  {
+    name: "United Arab Emirates",
+    code: "AE",
+    currency: "AED",
+    language: "Arabic",
+  },
 ];
-
-const countries: Country[] = Intl.DisplayNames
-  ? Intl.supportedValuesOf("region")
-      .map((code) => ({
-        code,
-        name:
-          new Intl.DisplayNames(["en"], {
-            type: "region",
-          }).of(code) || code,
-      }))
-      .sort((a, b) => a.name.localeCompare(b.name))
-  : [];
 
 type Props = {
   value?: Country | null;
