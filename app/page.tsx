@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/sections/how-it-works";
 import { AIDepartments } from "@/components/sections/ai-departments";
 import { AIAgents } from "@/components/sections/ai-agents";
 import { Documents } from "@/components/sections/documents";
+import { Enterprise } from "@/components/sections/enterprise";
 
 import { Footer } from "@/components/layout/footer";
 
@@ -28,6 +29,8 @@ export default function HomePage() {
         <AIAgents />
 
         <Documents />
+
+        <Enterprise />
 
       </main>
 
