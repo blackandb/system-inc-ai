@@ -1,7 +1,8 @@
 "use client";
-
+import CountrySelector from "@/components/ui/country-selector";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+
 
 const steps = [
   "Idea",
@@ -41,6 +42,10 @@ const departments = [
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(0);
+  const [selectedCountry, setSelectedCountry] = useState<{
+  name: string;
+  code: string;
+} | null>(null);
 
   const progress = useMemo(() => {
     return Math.round(((step + 1) / steps.length) * 100);
@@ -132,21 +137,36 @@ export default function OnboardingPage() {
               </WizardBlock>
             )}
 
-            {step === 2 && (
-              <WizardBlock
-                label="Step 03"
-                title="Select country"
-                description="The platform will later adapt legal structure, documents and setup logic by country."
-              >
-                <div className="grid gap-4 md:grid-cols-3">
-                  {["Romania", "United Kingdom", "United States", "UAE", "Germany", "France"].map(
-                    (country) => (
-                      <ChoiceCard key={country} title={country} />
-                    )
-                  )}
-                </div>
-              </WizardBlock>
-            )}
+           {step === 2 && (
+  <WizardBlock
+    label="Step 03"
+    title="Select country"
+    description="SYSTEM INC AI will automatically configure company formation, legal templates, taxation and compliance based on your selected jurisdiction."
+  >
+    <CountrySelector
+      value={selectedCountry}
+      onChange={setSelectedCountry}
+    />
+
+    {selectedCountry && (
+      <div className="mt-8 rounded-3xl border border-violet-500/20 bg-violet-500/5 p-6 backdrop-blur-xl">
+        <p className="text-xs uppercase tracking-[0.3em] text-violet-400">
+          Selected Country
+        </p>
+
+        <h3 className="mt-3 text-3xl font-semibold text-white">
+          {selectedCountry.name}
+        </h3>
+
+        <p className="mt-3 text-white/60">
+          SYSTEM INC AI will personalize your company setup,
+          legal structure, compliance requirements and document
+          generation for this jurisdiction.
+        </p>
+      </div>
+    )}
+  </WizardBlock>
+)}
 
             {step === 3 && (
               <WizardBlock
