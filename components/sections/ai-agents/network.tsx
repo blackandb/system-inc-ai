@@ -1,28 +1,81 @@
-type Props = {
-  title: string;
-  description: string;
-};
+"use client";
 
-export function DepartmentCard({
-  title,
-  description,
-}: Props) {
+import { motion } from "framer-motion";
+import { AgentNode } from "./agent-node";
+
+const agents = [
+  "CEO AI",
+  "Strategy",
+  "Finance",
+  "Legal",
+  "Marketing",
+  "Sales",
+  "Operations",
+  "HR",
+];
+
+export function Network() {
   return (
-    <div className="group rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-violet-500/40 hover:bg-white/[0.05]">
+    <div className="relative mx-auto h-[620px] max-w-[760px]">
 
-      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-500/20 bg-violet-500/10">
+      <motion.div
+        animate={{
+          scale: [1, 1.05, 1],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+        }}
+        className="absolute left-1/2 top-1/2 flex h-48 w-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-500/20 bg-black shadow-[0_0_80px_rgba(139,92,246,.35)]"
+      >
 
-        <div className="h-3 w-3 rounded-full bg-violet-400" />
+        <div className="text-center">
 
+          <div className="mx-auto mb-5 h-16 w-16 rounded-full bg-violet-500 shadow-[0_0_30px_rgba(139,92,246,.6)]" />
+
+          <p className="text-lg font-semibold text-white">
+            AI CORE
+          </p>
+
+          <p className="mt-2 text-xs text-zinc-500">
+            Orchestrating every department
+          </p>
+
+        </div>
+
+      </motion.div>
+
+      <div className="absolute left-1/2 top-0 -translate-x-1/2">
+        <AgentNode title={agents[0]} />
       </div>
 
-      <h3 className="text-2xl font-semibold text-white">
-        {title}
-      </h3>
+      <div className="absolute left-0 top-[22%]">
+        <AgentNode title={agents[1]} />
+      </div>
 
-      <p className="mt-4 leading-8 text-zinc-400">
-        {description}
-      </p>
+      <div className="absolute right-0 top-[22%]">
+        <AgentNode title={agents[2]} />
+      </div>
+
+      <div className="absolute left-0 top-[52%]">
+        <AgentNode title={agents[3]} />
+      </div>
+
+      <div className="absolute right-0 top-[52%]">
+        <AgentNode title={agents[4]} />
+      </div>
+
+      <div className="absolute left-[8%] bottom-0">
+        <AgentNode title={agents[5]} />
+      </div>
+
+      <div className="absolute right-[8%] bottom-0">
+        <AgentNode title={agents[6]} />
+      </div>
+
+      <div className="absolute left-1/2 bottom-0 -translate-x-1/2">
+        <AgentNode title={agents[7]} />
+      </div>
 
     </div>
   );
