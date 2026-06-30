@@ -1,13 +1,23 @@
 import { Background } from "@/components/layout/background";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/features/landing/hero";
+
+import { CompanyFactory } from "@/components/sections/company-factory";
+import { HowItWorks } from "@/components/sections/how-it-works";
+
 import { Footer } from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
     <Background>
       <Navbar />
-      <Hero />
+
+      <main>
+        <Hero />
+        <CompanyFactory />
+        <HowItWorks />
+      </main>
+
       <Footer />
     </Background>
   );
