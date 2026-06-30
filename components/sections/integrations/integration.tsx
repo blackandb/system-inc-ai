@@ -30,7 +30,9 @@ export function Integrations() {
           </h2>
 
           <p className="mt-8 text-lg leading-9 text-zinc-400">
-            SYSTEM INC AI connects with productivity, finance, CRM, AI and automation tools to turn your company into an intelligent operating system.
+            SYSTEM INC AI connects with productivity, finance, CRM, AI and
+            automation tools to turn your company into an intelligent operating
+            system.
           </p>
         </div>
 
