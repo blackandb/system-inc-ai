@@ -6,6 +6,7 @@ import { CompanyFactory } from "@/components/sections/company-factory";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { AIDepartments } from "@/components/sections/ai-departments";
 import { AIAgents } from "@/components/sections/ai-agents";
+import { Documents } from "@/components/sections/documents";
 
 import { Footer } from "@/components/layout/footer";
 
@@ -25,6 +26,8 @@ export default function HomePage() {
         <AIDepartments />
 
         <AIAgents />
+
+        <Documents />
 
       </main>
 
