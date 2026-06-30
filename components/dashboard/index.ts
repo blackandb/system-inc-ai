@@ -1,1 +1,1 @@
-export * from "./integrations";
+// components/dashboard/index.ts
